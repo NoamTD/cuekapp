@@ -13,7 +13,7 @@ myapp: app.#Application & {
 			tag:        "latest"
 		}
 		service: {
-			externalPort: 8081
+			externalPort: 8080
 		}
 	}
 }

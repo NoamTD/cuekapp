@@ -12,17 +12,17 @@ The following commands are supported:
 
 - `cue cmd deploy ./ENV` - deploy app to an environment
 - `cue cmd diff ./ENV` - display a diff between the current cluster state and the repo state
-- `cue cmd dump ./ENV` - dump the generated yaml definitions to stdout. The output can be piped to the `kapp` tool for an interactive deployment experience
+- `cue cmd dump ./ENV` - dump the generated yaml definitions to stdout. The output can be passed to the `kapp` tool for an interactive deployment experience
 
 ## Deploying to a cluster
 
 `kapp` allows for displaying a diff with a prompt, for validating changes before applying them to a cluster. Since `cue` scripting makes it difficult to interact with such prompts, the process is split in two:
 
 1. generate the k8s YAMLs
-2. pipe them to `kapp`, passing whichever flags are desired.
+2. pass them to `kapp`, with whichever flags are desired.
 
 For example, to deploy the dev app:
 
 ```bash
-cue cmd dump ./dev | kapp deploy -f - -a cuekapp --diff-changes 
+kapp deploy -a cuekapp --diff-changes -f <(cue cmd dump ./dev)
 ```
