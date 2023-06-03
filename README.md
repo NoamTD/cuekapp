@@ -9,6 +9,10 @@ After looking around for a replacement, I found two awesome tools that work hand
 
 combining the two, I believe the workflow for managing apps k8s can be greatly improved
 
+## The Goal of this repository
+
+I will use this repository to evolve my ideas around the ideal setup for managing apps on k8s. This may involve developing tooling (most likely in `go`), and standard examples for utilizing the methodology.
+
 ## Prerequisites
 
 * `kapp` and `cue` must be installed to work with this repository. Instructions can be found in the above links.
