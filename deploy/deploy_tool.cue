@@ -2,7 +2,6 @@ package deploy
 
 import (
 	"tool/cli"
-	"tool/file"
 	"tool/exec"
 	"encoding/yaml"
 )
@@ -21,11 +20,6 @@ command: diff: exec.Run & {
 	stdin: objStream
 }
 
-command: debug: cli.Print & {
+command: dump: cli.Print & {
 	text: objStream
-}
-
-command: dump: file.Create & {
-    filename: "dump.yaml"
-    contents: objStream
 }
